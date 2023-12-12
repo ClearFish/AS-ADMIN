@@ -1,2 +1,3 @@
-# AS-ADMIN
-AS-ADMIN
+# ishare-admin
+
+ishare 后台管理

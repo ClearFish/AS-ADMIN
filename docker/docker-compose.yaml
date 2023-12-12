@@ -1,0 +1,19 @@
+version: '3'
+services:
+  as-ui:
+    build:
+      context: .
+    restart: always
+    container_name: as-ui
+    image: as-ui
+    networks:
+      - spring_cloud_default
+    external_links:
+      - as-gateway
+    ports:
+      - 80:80
+
+# 加入到后端网络， 默认为 as_default  | docker network ls   查看
+networks:
+  spring_cloud_default:
+    external: true
