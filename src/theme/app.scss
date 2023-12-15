@@ -22,6 +22,7 @@
 	--next-color-seting-main: #e9eef3;
 	--next-color-seting-aside: #d3dce6;
 	--next-color-seting-header: #b3c0d1;
+	--new-bg-color:#F6F6F9
 }
 
 html,
@@ -55,7 +56,7 @@ body,
 		flex: 1;
 	}
 	.layout-aside {
-		background: var(--next-bg-menuBar);
+		background: var(--new-bg-color);
 		box-shadow: 2px 0 6px rgb(0 21 41 / 1%);
 		height: inherit;
 		position: relative;
@@ -75,7 +76,7 @@ body,
 		padding: 0 !important;
 		overflow: hidden;
 		width: 100%;
-		background-color: var(--next-bg-main-color);
+		background-color: var(--new-bg-color);
 		display: flex;
 		flex-direction: column;
 		// 内层 el-scrollbar样式，用于界面高度自适应（main.vue）
@@ -129,11 +130,15 @@ body,
 		width: 100%;
 	}
 	.layout-el-aside-br-color {
-		border-right: 1px solid var(--el-border-color-light, #ebeef5);
+		// border-right: 1px solid var(--el-border-color-light, #ebeef5);
 	}
 	// pc端左侧导航样式
 	.layout-aside-pc-220 {
 		width: 220px !important;
+		transition: width 0.3s ease;
+	}
+	.layout-aside-pc-240 {
+		width: 240px !important;
 		transition: width 0.3s ease;
 	}
 	.layout-aside-pc-250 {

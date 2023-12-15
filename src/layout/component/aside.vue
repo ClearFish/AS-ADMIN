@@ -2,6 +2,9 @@
 	<div class="h100" v-show="!isTagsViewCurrenFull">
 		<el-aside class="layout-aside" :class="setCollapseStyle">
 			<Logo v-if="setShowLogo" />
+			<div class="input_box">
+				<el-input v-model="input2" placeholder="股票代码/名称" :prefix-icon="Search" />
+			</div>
 			<el-scrollbar class="flex-auto" ref="layoutAsideScrollbarRef" @mouseenter="onAsideEnterLeave(true)" @mouseleave="onAsideEnterLeave(false)">
 				<Vertical :menuList="state.menuList" />
 			</el-scrollbar>
@@ -11,6 +14,7 @@
 
 <script setup lang="ts" name="layoutAside">
 import { defineAsyncComponent, reactive, computed, watch, onBeforeMount, ref } from 'vue';
+import { Search } from '@element-plus/icons-vue';
 import { storeToRefs } from 'pinia';
 import pinia from '/@/stores/index';
 import { useRoutesList } from '/@/stores/routesList';
@@ -64,12 +68,12 @@ const setCollapseStyle = computed(() => {
 					? 'layout-aside-pc-1'
 					: locale.value === 'en'
 					? 'layout-aside-pc-250'
-					: 'layout-aside-pc-220'
+					: 'layout-aside-pc-240'
 				: isCollapse
 				? 'layout-aside-pc-64'
 				: locale.value === 'en'
 				? 'layout-aside-pc-250'
-				: 'layout-aside-pc-220',
+				: 'layout-aside-pc-240',
 		];
 	}
 });
@@ -158,3 +162,10 @@ watch(
 	}
 );
 </script>
+<style lang="scss" scoped>
+.input_box {
+	padding: 0 20px;
+	box-sizing: border-box;
+	margin: 24px 0;
+}
+</style>

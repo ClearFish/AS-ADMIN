@@ -1,7 +1,7 @@
 <template>
 	<div class="layout-navbars-breadcrumb-index">
 		<Logo v-if="setIsShowLogo" />
-		<Breadcrumb />
+		<!-- <Breadcrumb /> -->
 		<Horizontal :menuList="state.menuList" v-if="isLayoutTransverse" />
 		<User />
 	</div>
@@ -98,7 +98,7 @@ onUnmounted(() => {
 	height: 50px;
 	display: flex;
 	align-items: center;
-	background: var(--next-bg-topBar);
+	background: var(--new-bg-color);
 	border-bottom: 1px solid var(--next-border-color-light);
 }
 </style>

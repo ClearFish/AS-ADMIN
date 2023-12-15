@@ -1,6 +1,7 @@
 <template>
 	<div class="layout-logo" v-if="setShowLogo" @click="onThemeConfigChange">
-		<span>{{ themeConfig.globalTitle }}</span>
+		<!-- <span>{{ themeConfig.globalTitle }}</span> -->
+		<img :src="themeConfig.globalLogo" alt="" />
 	</div>
 	<div class="layout-logo-size" v-else @click="onThemeConfigChange">
 		<img :src="logoMini" class="layout-logo-size-img" />
@@ -29,7 +30,7 @@ const onThemeConfigChange = () => {
 
 <style scoped lang="scss">
 .layout-logo {
-	width: 220px;
+	width: 240px;
 	height: 50px;
 	display: flex;
 	align-items: center;
@@ -50,6 +51,10 @@ const onThemeConfigChange = () => {
 		span {
 			color: var(--color-primary-light-2);
 		}
+	}
+	img {
+		width: 170px;
+		height: 32px;
 	}
 }
 .layout-logo-size {

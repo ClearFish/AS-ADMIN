@@ -12,7 +12,7 @@ import request from '/@/utils/request';
 import { useMessage } from '/@/hooks/message';
 // @ts-ignore
 import * as CryptoJS from 'crypto-js';
-import {sm4} from 'sm-crypto'
+import { sm4 } from 'sm-crypto';
 import { validateNull } from './validate';
 
 // 引入组件
@@ -41,7 +41,7 @@ export function useTitle() {
 	nextTick(() => {
 		let globalTitle: string = themeConfig.value.globalTitle;
 		let webTitle = setTagsViewNameI18n(router.currentRoute.value);
-		document.title = `${webTitle} - ${globalTitle}` || globalTitle;
+		// document.title = `${webTitle} - ${globalTitle}` || globalTitle;
 	});
 }
 
